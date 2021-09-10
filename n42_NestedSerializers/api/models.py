@@ -15,7 +15,7 @@ class Singer(models.Model):
 
 class Song(models.Model):
     title = models.CharField(max_length=30)
-    singer = models.ForeignKey(Singer, on_delete=models.CASCADE, related_name='song')
+    singer = models.ForeignKey(Singer, on_delete=models.CASCADE, related_name='sungby')
     duration = models.IntegerField()        
 
     def __str__(self):
