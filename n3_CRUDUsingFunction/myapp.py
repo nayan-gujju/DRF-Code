@@ -11,7 +11,7 @@ print('0 :- Exit')
 i = int(input('Select :-'))
 if i != 0:
     if i == 1:
-        def get_data(id =None ):
+        def get_data(id = None):
             data = {}
             if id is not None:
                 data = {'id':id}    
