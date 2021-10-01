@@ -21,6 +21,6 @@ class StudentSerializer(serializers.Serializer):
         nm = data.get('name')
         print(nm)
         ct = data.get('city')
-        if nm.lower() == 'nayan' and ct.lower() != 'Surat':
+        if nm.lower() == 'nayan' and ct.lower() != 'surat':
             raise serializers.ValidationError('City Must be Surat')
         return data 

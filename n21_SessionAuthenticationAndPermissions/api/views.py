@@ -25,3 +25,4 @@ class StudentModelView(ModelViewSet):
     # permission_classes = [DjangoModelPermissionsOrAnonReadOnly]
     
     permission_classes = [DjangoObjectPermissions]
+

@@ -3,11 +3,11 @@ from .models import Student
 
 class StudentSerializer(serializers.ModelSerializer):
     
+    
     def start_with_n(value):
         if value[0].lower() != 'n':
             raise  serializers.ValidationError('Name must be start with N')
         return value
-    
     name = serializers.CharField(validators=[start_with_n])
     
     class Meta:

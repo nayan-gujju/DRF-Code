@@ -1,0 +1,20 @@
+{% extends "phone/base.html" %}
+
+
+{% block title %}
+    student registration
+{% endblock title %}
+
+
+{% block content %}
+    <ul>
+        {% for data in datas %}
+            <li>{{ data.id }}</li>
+            <li>{{ data.firstname }}</li>
+            <li>{{ data.lastname }}</li>
+            <li>{{ data.roll }}</li>
+            <li>{{ data.city }}</li>
+            <hr>
+        {% endfor %}
+    </ul>
+{% endblock content %}
