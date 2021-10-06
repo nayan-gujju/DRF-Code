@@ -50,19 +50,3 @@ class StudentApi(APIView):
         stu = Student.objects.get(pk=pk)
         stu.delete()
         return Response({'msg':'Data Deleted...'}, status=status.HTTP_100_CONTINUE)
-
-
-
-Hello,  
-I have been through your requirement of program.
-
-Queries
-1) I have searched related to this program, but no python library and modules that uses for find time from audio file.
-2) Some speech-to-text library are used to find time from audio files, but those library required account and purchase. 
-    we have two libraries :-
-            1) Google Cloud Speech-to-Text API recognition
-            2) Microsoft Azure 
-
-Looking forward to hearing back from you.
-
-Thanks.

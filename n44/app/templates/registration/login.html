@@ -1,0 +1,14 @@
+{% extends "app/base.html" %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content %}
+    <form action="" method="POST" novalidate>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Login">
+    <a href="{% url 'forgot' %}">Forgot Password?</a>
+    </form>
+{% endblock content %}

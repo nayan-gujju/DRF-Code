@@ -7,14 +7,55 @@
 
 
 {% block content %}
-    <ul>
-        {% for data in datas %}
-            <li>{{ data.id }}</li>
-            <li>{{ data.firstname }}</li>
-            <li>{{ data.lastname }}</li>
-            <li>{{ data.roll }}</li>
-            <li>{{ data.city }}</li>
-            <hr>
-        {% endfor %}
-    </ul>
+    {% comment %} <div class='container'>
+        <div class="row">
+            <div class="col-sm-3">
+            <h4 class="alert alert-info">Student Information </h4>
+                <ul>
+                {% for data in datas %}
+                    <li>ID :- {{ data.id }}</li>
+                    <li>First Name :- {{ data.firstname }}</li>
+                    <li>Last Name :- {{ data.lastname }}</li>
+                    <li>Roll No. :- {{ data.roll }}</li>
+                    <li>City :- {{ data.city }}</li>
+                    <a href="{% url 'profile-list' data.id %}" class=" btn btn-secondary btn-sm">Update</a>
+                    <a href="{% url 'delete' data.id %}" class=" btn btn-danger btn-sm">Delete</a>
+                    <hr>
+                {% endfor %}
+                </ul>
+            </div>
+        </div> 
+    </div>    {% endcomment %}
+    <div class='container-sm'>
+        <table class="table table-success table-striped">
+            <thead >
+                <tr>
+                    <th>Id.</th>
+                    <th>First Name.</th>
+                    <th>Last Name.</th>
+                    <th>Roll No.</th>
+                    <th>City.</th>
+                    <th>Operations</th>
+                </tr>
+            </thead>
+            <tbody> 
+                {% for data in datas %}
+                    <tr> 
+                        <td>{{data.id}}</td>
+                        <td>{{data.firstname}}</td>
+                        <td>{{data.lastname}}</td>
+                        <td>{{data.roll}}</td>
+                        <td>{{data.city}}</td>
+                        {% if user.is_authenticated %}
+                            <td><a href="{% url 'profile-list' data.id %}" class=" btn btn-secondary btn-sm">Update</a>
+                        <a href="{% url 'delete' data.id %}" class=" btn btn-danger btn-sm">Delete</a></td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
 {% endblock content %}

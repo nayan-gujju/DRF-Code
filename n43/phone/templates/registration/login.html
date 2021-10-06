@@ -1,0 +1,20 @@
+{% extends "phone/base.html" %}
+{% load rest_framework %}
+
+{% block title %}
+    Login
+{% endblock title %}
+
+{% block content %}
+    {% comment %} <form action="" method="POST" novalidate>
+    {% csrf_token %}
+    {{form.as_p}}
+    <input type="submit" value="Login">
+    </form> {% endcomment %}
+
+    <form action="{% url 'login' %}" method="post" novalidate>
+        {% csrf_token %}
+        {% render_form serializer template_pack='rest_framework/vertical' %}
+        <button type="submit" class="btn btn-default">Sign in</button>
+    </form>
+{% endblock content %}

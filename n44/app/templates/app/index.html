@@ -1,0 +1,11 @@
+{% extends "app/base.html" %}
+
+{% block title %}
+    index
+{% endblock title %}
+
+{% block content %}
+    <h3>Index Page</h3>
+    <a href="{% url 'user_reg' %}" class=" btn btn-secondary btn-sm">User</a>
+    <a href="{% url 'student_reg' %}" class=" btn btn-danger btn-sm">Student</a>
+{% endblock content %}

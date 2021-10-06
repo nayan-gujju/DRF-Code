@@ -1,0 +1,29 @@
+{% extends 'app/base.html' %}
+
+{% block title %}
+    Forgot Password
+{% endblock title %}
+
+
+{% block content %}
+    {% comment %} <h1>Forgot Password</h1>
+    {% if messages %}
+        {% for message in messages %}
+            <p style="color: red">{{ message }}</p>
+        {% endfor %}
+    {% endif %}
+    <form action="{% url 'forgot' %}" method="POST">
+        {% csrf_token %}
+        {{ form }}
+        <input type="submit" value="Submit">
+    </form> {% endcomment %}
+    <div class="container p-1">
+  	 	<h2 class="font-weight-bold mt-3">Reset Password</h2>
+		<hr>
+        <form action="" method="POST">
+        {% csrf_token %}
+            {{ form }}                    
+            <button class="btn btn-primary" type="submit">Send email</button>
+        </form>
+  	</div> 
+{% endblock content %}

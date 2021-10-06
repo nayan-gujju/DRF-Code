@@ -1,0 +1,12 @@
+{% extends 'app/base.html' %}
+{% load rest_framework %}
+{% block content %}
+    <h1>Profile - {{ profile. }}</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% render_form serializer %}
+        <input type="submit" class="btn btn-info" value="Save">
+        <a href="{% url 'student_api' %}" class="btn btn-primary">Home</a>
+    </form>
+{% endblock content %}  

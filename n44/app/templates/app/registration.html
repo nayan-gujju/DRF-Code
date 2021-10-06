@@ -1,0 +1,23 @@
+{% extends "app/base.html" %}
+
+{% block title %}
+    student registration
+{% endblock title %}
+
+{% block content %}
+    <h1>student registration </h1>
+    <form action="" method="POST" novalidate>
+        {% csrf_token %}
+        {% for fm in form %}
+        {{fm.label_tag}} {{fm}} {{fm.errors|striptags}} <br><br>
+        {% endfor %}
+        <input type="submit" value="Submit">
+        {% if messages %}
+            {% for message in messages %}
+                {% if message.tags %} {{message.tag}} {% endif %}
+                {{message}} 
+            {% endfor %}
+        {% endif %}
+    </form>
+    <hr>
+{% endblock content %}

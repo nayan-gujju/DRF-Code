@@ -1,0 +1,44 @@
+{% extends "app/base.html" %}
+
+
+{% block title %}
+    user registration
+{% endblock title %}
+
+
+{% block content %}
+    <div class='container-sm'>
+        <table class="table table-success table-striped">
+            <thead >
+                <tr>
+                    <th>Id.</th>
+                    <th>User Name.</th>
+                    <th>First Name.</th>
+                    <th>Last Name.</th>
+                    <th>Email.</th>
+                    <th>Operations</th>
+                    {% comment %} <th>Password.</th>
+                    <th>Password2.</th> {% endcomment %}
+                </tr>
+            </thead>
+            <tbody> 
+                {% for data in datas %}
+                    <tr> 
+                        <td>{{data.id}}</td>
+                        <td>{{data.username}}</td>
+                        <td>{{data.first_name}}</td>
+                        <td>{{data.last_name}}</td>
+                        <td>{{data.email}}</td>
+                        {% if user.is_authenticated %}
+                            <td><a href="{% url 'user_list' data.id %}" class=" btn btn-secondary btn-sm">Update</a>
+                                <a href="{% url 'user_delete' data.id %}" class=" btn btn-danger btn-sm">Delete</a></td>
+                        {% else %}
+                            <td></td>
+                        {% endif %}
+                        
+                    </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+{% endblock content %}

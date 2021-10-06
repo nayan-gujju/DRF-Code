@@ -1,0 +1,12 @@
+{% extends 'phone/base.html' %}
+{% load rest_framework %}
+{% block content %}
+    <h1>Profile - {{ profile.firstname }}</h1>
+
+    <form action="" method="POST">
+        {% csrf_token %}
+        {% render_form serializer %}
+        <input type="submit" class="btn btn-info" value="Save">
+        <a href="{% url 'registrationapi' %}" class="btn btn-primary">Home</a>
+    </form>
+{% endblock content %}

@@ -1,0 +1,24 @@
+{% extends "phone/base.html" %}
+
+
+{% block title %}
+    student registration api 
+{% endblock title %}
+
+
+{% block content %}
+    <h1>User Registration Form </h1>
+    <ul>
+        {% for data in datas %}
+            <li>Username :- {{ data.username }}</li>
+            <li>Email :- {{ data.email }}</li>
+            <li>First Name :- {{ data.first_name }}</li>
+            <li>Last NAme :- {{ data.last_name }}</li>
+            <li>Password :- {{ data.password }}</li>
+            <li>Password2 :- {{ data.password2 }}</li>
+            <hr>
+        {% endfor %}
+    </ul>
+    <hr>
+    <a href="{% url 'registrationapi' %}">API</a>
+{% endblock content %}
